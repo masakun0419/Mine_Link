@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MineLink.App (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MineLink.App (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
