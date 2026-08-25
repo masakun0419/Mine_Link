@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="MineLink_App.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MineLink_App.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Padding="32,24,32,24" Spacing="20" MaxWidth="480" HorizontalAlignment="Left">
+            <TextBlock Text="設定" Style="{StaticResource TitleLargeTextBlockStyle}" />
+
+            <StackPanel Spacing="8">
+                <TextBlock Text="テーマ" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <RadioButtons x:Name="ThemeRadios" SelectionChanged="ThemeRadios_SelectionChanged">
+                    <RadioButton Content="ダーク" Tag="Dark" />
+                    <RadioButton Content="ライト" Tag="Light" />
+                    <RadioButton Content="システムに合わせる" Tag="System" />
+                </RadioButtons>
+            </StackPanel>
+
+            <StackPanel Spacing="8">
+                <TextBlock Text="既定のサーバーポート" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <NumberBox x:Name="DefaultPortBox" Minimum="1" Maximum="65535" SpinButtonPlacementMode="Compact" ValueChanged="DefaultPortBox_ValueChanged" />
+            </StackPanel>
+
+            <StackPanel Spacing="8">
+                <TextBlock Text="起動" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <CheckBox x:Name="StartupCheckBox" Content="Windows起動時にMineLinkを起動する" Checked="StartupCheckBox_Changed" Unchecked="StartupCheckBox_Changed" />
+            </StackPanel>
+
+            <StackPanel Spacing="8">
+                <TextBlock Text="ログ" Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <ComboBox x:Name="LogLevelCombo" HorizontalAlignment="Stretch" SelectionChanged="LogLevelCombo_SelectionChanged">
+                    <ComboBoxItem Content="詳細" />
+                    <ComboBoxItem Content="情報" />
+                    <ComboBoxItem Content="警告のみ" />
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
